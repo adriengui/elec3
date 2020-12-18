@@ -22,12 +22,12 @@ void recup(int nb[]){
 void calc(int nb[], double stat[]){
 	stat[EFFECTIF]=nb[0];
 
-	stat[MIN]=nb[0];
+	stat[MIN]=nb[1];
 	for(int x=1;x<=stat[EFFECTIF];x++)
 		if(nb[x]<stat[MIN])
 			stat[MIN]=nb[x];
 
-	stat[MAX]=nb[0];
+	stat[MAX]=nb[1];
 	for(int x=1;x<=stat[EFFECTIF];x++)
         	if(nb[x]>stat[MAX])
                 	stat[MAX]=nb[x];
