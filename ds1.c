@@ -22,22 +22,19 @@ void recup(int nb[]){
 void calc(int nb[], double stat[]){
 	stat[EFFECTIF]=nb[0];
 
-	stat[MIN]=nb[1];
-	for(int x=1;x<=stat[EFFECTIF];x++)
+	stat[MIN]=stat[MAX]=nb[1];
+	stat[MOYENNE]=stat[ECART_TYPE]=0;
+
+	for(int x=1;x<=stat[EFFECTIF];x++){
 		if(nb[x]<stat[MIN])
 			stat[MIN]=nb[x];
+		if(nb[x]>stat[MAX])
+			stat[MAX]=nb[x];
+		stat[MOYENNE]+=nb[x];
+	}
 
-	stat[MAX]=nb[1];
-	for(int x=1;x<=stat[EFFECTIF];x++)
-        	if(nb[x]>stat[MAX])
-                	stat[MAX]=nb[x];
-
-	stat[MOYENNE]=0;
-	for(int x=1;x<=stat[EFFECTIF];x++)
-        	stat[MOYENNE]+=nb[x];
 	stat[MOYENNE]/=stat[EFFECTIF];
 
-	stat[ECART_TYPE]=0;
 	for(int x=1;x<=stat[EFFECTIF];x++)
 		stat[ECART_TYPE]+=pow(nb[x]-stat[MOYENNE],2);
 	stat[ECART_TYPE]=sqrt(stat[ECART_TYPE]/stat[EFFECTIF]);
