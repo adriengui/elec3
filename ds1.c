@@ -11,7 +11,7 @@ void recup(int nb[]){
 	while(scanf("%d",&n) != EOF){
 		if(i==NB_MAX+1)
 			break;
-		if(n>0 && n%2==0){
+		if(n>0 && !(n&1)){
 			nb[i]=n;
 			nb[0]=i;
 			i++;
