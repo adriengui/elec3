@@ -7,8 +7,8 @@ void dct(int m, int n, double i[m][n], double f[m][n]){
     for(u=0;u<m;u++){
         for(v=0;v<n;v++){
             s=0;
-            for(x=0;x<m;x++)
-                for(y=0;y<n;y++)
+            for(x=0;x<n;x++)
+                for(y=0;y<m;y++)
                     s+=i[x][y]*cos(((2*x+1)*u*M_PI)/(2*n))*cos(((2*y+1)*v*M_PI)/(2*m));
             if(!u)
                 s*=1/sqrt(2);
