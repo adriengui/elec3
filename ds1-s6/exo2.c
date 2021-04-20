@@ -13,9 +13,9 @@ char *Strchr(char *s, char c) {
 
 int main(int argc, char *argv[]) {
 
-	char *a="Les mauvais en C", *b;
+	char *a="Les pointeurs C pas mon for !", *b;
 
-	if( (b=Strchr(a,'a')) != NULL )
+	if( (b=Strchr(a,'s')) != NULL )
 		printf("%s\n",b);
 
 	if( (b=Strchr(a,'d')) != NULL )
